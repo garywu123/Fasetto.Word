@@ -1,0 +1,10 @@
+E:\OneDrive\Programming\C#\04_WPF\WPF_Advanced\Fasetto.Word.Core\bin\Debug\netcoreapp3.1\Fasetto.Word.Core.deps.json
+E:\OneDrive\Programming\C#\04_WPF\WPF_Advanced\Fasetto.Word.Core\bin\Debug\netcoreapp3.1\Fasetto.Word.Core.dll
+E:\OneDrive\Programming\C#\04_WPF\WPF_Advanced\Fasetto.Word.Core\bin\Debug\netcoreapp3.1\Fasetto.Word.Core.pdb
+E:\OneDrive\Programming\C#\04_WPF\WPF_Advanced\Fasetto.Word.Core\obj\Debug\netcoreapp3.1\Fasetto.Word.Core.AssemblyInfoInputs.cache
+E:\OneDrive\Programming\C#\04_WPF\WPF_Advanced\Fasetto.Word.Core\obj\Debug\netcoreapp3.1\Fasetto.Word.Core.AssemblyInfo.cs
+E:\OneDrive\Programming\C#\04_WPF\WPF_Advanced\Fasetto.Word.Core\obj\Debug\netcoreapp3.1\Fasetto.Word.Core.csproj.CoreCompileInputs.cache
+E:\OneDrive\Programming\C#\04_WPF\WPF_Advanced\Fasetto.Word.Core\obj\Debug\netcoreapp3.1\Fasetto.Word.Core.csproj.Fody.CopyLocal.cache
+E:\OneDrive\Programming\C#\04_WPF\WPF_Advanced\Fasetto.Word.Core\obj\Debug\netcoreapp3.1\Fasetto.Word.Core.dll
+E:\OneDrive\Programming\C#\04_WPF\WPF_Advanced\Fasetto.Word.Core\obj\Debug\netcoreapp3.1\Fasetto.Word.Core.pdb
+E:\OneDrive\Programming\C#\04_WPF\WPF_Advanced\Fasetto.Word.Core\obj\Debug\netcoreapp3.1\Fasetto.Word.Core.csprojAssemblyReference.cache

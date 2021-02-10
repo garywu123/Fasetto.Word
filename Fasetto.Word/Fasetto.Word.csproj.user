@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Control\Chat\ChatListControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Control\Chat\ChatListItemControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Control\PageHost.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Control\SideMenuControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Page\ChatPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Page\LoginPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Page\RegisterPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Control\Chat\ChatListControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Control\Chat\ChatListItemControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Control\PageHost.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Control\SideMenuControl.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Page\ChatPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Page\LoginPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Page\RegisterPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Styles\WindowStyleDict.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Styles\TextsDict.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Styles\ColorsDict.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Styles\FontsStyleDict.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Styles\ButtonStyleDict.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>

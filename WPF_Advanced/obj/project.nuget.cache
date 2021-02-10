@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "NNOt/5Z3EfUOdxIP+HA1I+iRsyCf6uCWJ5TfXi+/kV5VPx6Jblog6th+x48CHGOiQRg8CAu2Jr/QHhyNlRAdoQ==",
+  "success": true,
+  "projectFilePath": "E:\\OneDrive\\Programming\\C#\\04_WPF\\WPF_Advanced\\WPF_Advanced\\WPF_Advanced.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Gary Wu\\.nuget\\packages\\fody\\6.3.0\\fody.6.3.0.nupkg.sha512",
+    "C:\\Users\\Gary Wu\\.nuget\\packages\\propertychanged.fody\\3.3.1\\propertychanged.fody.3.3.1.nupkg.sha512"
+  ],
+  "logs": []
+}

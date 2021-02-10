@@ -1,0 +1,82 @@
+﻿<local:BasePage
+    x:Class="Fasetto.Word.Page.RegisterPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:attachedProperty="clr-namespace:Fasetto.Word.AttachedProperty"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Fasetto.Word.Page"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModel1="clr-namespace:Fasetto.Word.Core.ViewModel;assembly=Fasetto.Word.Core"
+    x:Name="Page"
+    Title="RegisterPage"
+    d:DesignHeight="700"
+    d:DesignWidth="700"
+    x:TypeArguments="viewModel1:RegisterViewModel"
+    mc:Ignorable="d">
+
+
+    <Border Background="Transparent">
+        <Grid>
+            <!--  Login in white box  -->
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <StackPanel
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    TextBlock.TextAlignment="Center">
+
+                    <Border
+                        Width="330"
+                        Margin="50,50,50,0"
+                        Padding="15,70,15,15"
+                        Background="{StaticResource ForegroundLightBrush}"
+                        CornerRadius="10"
+                        SnapsToDevicePixels="True">
+                        <StackPanel>
+                            <!--  Sign up header  -->
+                            <TextBlock
+                                FontFamily="{StaticResource LatoRegular}"
+                                FontSize="40"
+                                Foreground="{StaticResource WordBlueBrush}"
+                                Text="Sign Up" />
+
+                            <!--  Sign up subtext  -->
+                            <TextBlock
+                                Margin="0,0,0,20"
+                                FontSize="{StaticResource FontSizeRegular}"
+                                Foreground="{StaticResource ForegroundDarkBrush}"
+                                Text="It's about to get fun." />
+
+                            <!--  Email  -->
+                            <TextBox
+                                Style="{StaticResource InputTextBox}"
+                                Tag="Email"
+                                Text="{Binding Email}" />
+
+                            <!--  Password  -->
+                            <PasswordBox
+                                Name="passwordText"
+                                Style="{StaticResource PasswordBoxStyle}"
+                                Tag="Password" />
+
+                            <!--  Register Button  -->
+                            <Button
+                                HorizontalAlignment="Center"
+                                attachedProperty:IsBusyProperty.Value="{Binding RegisterIsRunning}"
+                                Command="{Binding RegisterCommand}"
+                                CommandParameter="{Binding ElementName=Page}"
+                                Content="Register"
+                                FontSize="20" />
+                        </StackPanel>
+
+                    </Border>
+                    <Button
+                        HorizontalAlignment="Center"
+                        Content="Or I already have an account"
+                        FontSize="16"
+                        Style="{StaticResource TextButton}" 
+                        Command="{Binding LoginCommand }"/>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Border>
+</local:BasePage>
