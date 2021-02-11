@@ -889,11 +889,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\OneDrive\\Programming\\C#\\04_WPF\\WPF_Advanced\\Fasetto.Word\\Fasetto.Word.csproj",
+      "projectUniqueName": "E:\\OneDrive\\Programming\\C#\\00_Projects\\WPF_Advanced\\Fasetto.Word\\Fasetto.Word.csproj",
       "projectName": "Fasetto.Word",
-      "projectPath": "E:\\OneDrive\\Programming\\C#\\04_WPF\\WPF_Advanced\\Fasetto.Word\\Fasetto.Word.csproj",
+      "projectPath": "E:\\OneDrive\\Programming\\C#\\00_Projects\\WPF_Advanced\\Fasetto.Word\\Fasetto.Word.csproj",
       "packagesPath": "C:\\Users\\Gary Wu\\.nuget\\packages\\",
-      "outputPath": "E:\\OneDrive\\Programming\\C#\\04_WPF\\WPF_Advanced\\Fasetto.Word\\obj\\",
+      "outputPath": "E:\\OneDrive\\Programming\\C#\\00_Projects\\WPF_Advanced\\Fasetto.Word\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -913,8 +913,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "E:\\OneDrive\\Programming\\C#\\04_WPF\\WPF_Advanced\\Fasetto.Word.Core\\Fasetto.Word.Core.csproj": {
-              "projectPath": "E:\\OneDrive\\Programming\\C#\\04_WPF\\WPF_Advanced\\Fasetto.Word.Core\\Fasetto.Word.Core.csproj"
+            "E:\\OneDrive\\Programming\\C#\\00_Projects\\WPF_Advanced\\Fasetto.Word.Core\\Fasetto.Word.Core.csproj": {
+              "projectPath": "E:\\OneDrive\\Programming\\C#\\00_Projects\\WPF_Advanced\\Fasetto.Word.Core\\Fasetto.Word.Core.csproj"
             }
           }
         }
@@ -965,7 +965,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gdJ+6LEMperzveC/6drrndLczkAOXBil0uyY1wpTZeol66gr/M2eKG6VKrV4HMSJCeSNg228XZWUU6t9rLm2KQ==",
+  "dgSpecHash": "I7MhkpH7SYC1WCW2lEWuE3VgTBnsem34ORtzjmFNRlJ0xpDgNPqe20mDFZYFF+euvFC00X5qlqpVItp53QIk6A==",
   "success": true,
-  "projectFilePath": "E:\\OneDrive\\Programming\\C#\\04_WPF\\WPF_Advanced\\Fasetto.Word.Core\\Fasetto.Word.Core.csproj",
+  "projectFilePath": "E:\\OneDrive\\Programming\\C#\\00_Projects\\WPF_Advanced\\Fasetto.Word.Core\\Fasetto.Word.Core.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Gary Wu\\.nuget\\packages\\fody\\6.3.0\\fody.6.3.0.nupkg.sha512",
     "C:\\Users\\Gary Wu\\.nuget\\packages\\jetbrains.annotations\\2020.3.0\\jetbrains.annotations.2020.3.0.nupkg.sha512",
