@@ -29,7 +29,6 @@ namespace Fasetto.Word.ValueConverter
             Debug.WriteLine(
                 $"Application Page Number received by Converter: {(ApplicationPage) value}");
 
-            if (value == null) return null;
             // Find the appropriate page 
             switch ((ApplicationPage) value)
             {

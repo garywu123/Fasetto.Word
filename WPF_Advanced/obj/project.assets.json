@@ -92,11 +92,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\OneDrive\\Programming\\C#\\04_WPF\\WPF_Advanced\\WPF_Advanced\\WPF_Advanced.csproj",
+      "projectUniqueName": "E:\\OneDrive\\Programming\\C#\\00_Projects\\WPF_Advanced\\WPF_Advanced\\WPF_Advanced.csproj",
       "projectName": "WPF_Advanced",
-      "projectPath": "E:\\OneDrive\\Programming\\C#\\04_WPF\\WPF_Advanced\\WPF_Advanced\\WPF_Advanced.csproj",
+      "projectPath": "E:\\OneDrive\\Programming\\C#\\00_Projects\\WPF_Advanced\\WPF_Advanced\\WPF_Advanced.csproj",
       "packagesPath": "C:\\Users\\Gary Wu\\.nuget\\packages\\",
-      "outputPath": "E:\\OneDrive\\Programming\\C#\\04_WPF\\WPF_Advanced\\WPF_Advanced\\obj\\",
+      "outputPath": "E:\\OneDrive\\Programming\\C#\\00_Projects\\WPF_Advanced\\WPF_Advanced\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -151,7 +151,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

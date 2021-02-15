@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\OneDrive\\Programming\\C#\\04_WPF\\WPF_Advanced\\MVVM\\MVVM.csproj",
+      "projectUniqueName": "E:\\OneDrive\\Programming\\C#\\00_Projects\\WPF_Advanced\\MVVM\\MVVM.csproj",
       "projectName": "MVVM",
-      "projectPath": "E:\\OneDrive\\Programming\\C#\\04_WPF\\WPF_Advanced\\MVVM\\MVVM.csproj",
+      "projectPath": "E:\\OneDrive\\Programming\\C#\\00_Projects\\WPF_Advanced\\MVVM\\MVVM.csproj",
       "packagesPath": "C:\\Users\\Gary Wu\\.nuget\\packages\\",
-      "outputPath": "E:\\OneDrive\\Programming\\C#\\04_WPF\\WPF_Advanced\\MVVM\\obj\\",
+      "outputPath": "E:\\OneDrive\\Programming\\C#\\00_Projects\\WPF_Advanced\\MVVM\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -67,7 +67,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.103\\RuntimeIdentifierGraph.json"
       }
     }
   }

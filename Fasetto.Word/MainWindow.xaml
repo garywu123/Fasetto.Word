@@ -30,10 +30,9 @@
                     <ControlTemplate TargetType="{x:Type Window}">
                         <!--  Outer border with the dropshadow margin  -->
                         <Border
-                            Margin="{Binding OuterMarginSizeThickness, FallbackValue=10}">
+                            Padding="{Binding OuterMarginSizeThickness, FallbackValue=10}">
                             <!--  Main Window Outline  -->
                             <Grid>
-
                                 <!--  Opacity mask for corners on grid  -->
                                 <Border
                                     x:Name="Container"
@@ -100,7 +99,7 @@
                                                 <TextBlock
                                                     Margin="0,0,0,-5"
                                                     FontFamily="{StaticResource LatoBold}"
-                                                    FontSize="{StaticResource FontSizeLarge}">
+                                                    FontSize="{StaticResource FontSizeXXLarge}">
                                                     <Run
                                                         Foreground="{StaticResource WordOrangeBrush}"
                                                         Text="W" />
