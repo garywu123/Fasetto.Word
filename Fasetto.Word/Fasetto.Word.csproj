@@ -90,6 +90,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Control\Chat\ChatMessageListControl.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Control\Chat\ChatMessageListControl.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Resources\Styles\WindowStyleDict.xaml">
       <SubType>Designer</SubType>
     </Page>

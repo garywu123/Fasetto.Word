@@ -138,8 +138,8 @@
                             <TextBlock
                                 HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
                                 VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
-                                Style="{StaticResource SpinningText}"
                                 FontSize="{TemplateBinding FontSize}"
+                                Style="{StaticResource SpinningText}"
                                 Visibility="{TemplateBinding attachedProperty:IsBusyProperty.Value,
                                                              Converter={valueConverter:BooleanToVisibilityConverter},
                                                              ConverterParameter=True}" />
