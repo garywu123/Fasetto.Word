@@ -3,10 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:designData="clr-namespace:Fasetto.Word.Core.ViewModel.Chat.ChatMessage.DesignData;assembly=Fasetto.Word.Core"
+             xmlns:valueConverter="clr-namespace:Fasetto.Word.ValueConverter"
              mc:Ignorable="d"
              d:DesignWidth="334">
 
-    <Border Padding="5">
+    <Border Padding="5"
+            d:DataContext="{x:Static designData:ChatMessageListItemDesignViewModel.Instance}">
+
         <Grid>
 
             <!-- Profile Picture -->
@@ -18,9 +22,11 @@
                     Width="35"
                     Background="Green"
                     BorderBrush="{StaticResource ForegroundLightBrush}"
-                    BorderThickness="2">
+                    BorderThickness="2"
+                    Visibility="{Binding SentByMe, 
+                                Converter={valueConverter:BooleanToVisibilityConverter}}">
 
-                <TextBlock Text="LM"
+                <TextBlock Text="{Binding Initials}"
                            VerticalAlignment="Center"
                            HorizontalAlignment="Center"
                            Foreground="{StaticResource ForegroundLightBrush}"
@@ -29,8 +35,32 @@
 
 
             <!-- Chat message container -->
-            <Grid Margin="25 0 0 0"
-                  HorizontalAlignment="Left">
+            <Grid Margin="25 0 15 0"
+                  HorizontalAlignment="{Binding SentByMe,
+                                        Converter={valueConverter:SentByMeToAlignmentConverter}}">
+
+                <Grid.Triggers>
+                    <!--Mouse over shows time-->
+
+                    <EventTrigger RoutedEvent="MouseEnter">
+                        <BeginStoryboard>
+                            <Storyboard TargetName="MessageTimeContainer" TargetProperty="Opacity">
+                                <DoubleAnimation From="0" To="1" Duration="00:00:00.5"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+
+                    </EventTrigger>
+
+                    <!--Mouse over hides time-->
+                    <EventTrigger RoutedEvent="MouseLeave">
+                        <BeginStoryboard>
+                            <Storyboard TargetName="MessageTimeContainer" TargetProperty="Opacity">
+                                <DoubleAnimation To="0" Duration="00:00:00.5"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+
+                    </EventTrigger>
+                </Grid.Triggers>
 
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" /> <RowDefinition Height="Auto" />
@@ -41,11 +71,12 @@
                 <!-- Speech Bubble -->
                 <Border CornerRadius="10"
                         Padding="15"
-                        Background="{StaticResource ForegroundLightBrush}">
+                        Background="{Binding SentByMe, 
+                                        Converter={valueConverter:SentByMeToColorConverter}}">
                     <!-- Message Text -->
                     <TextBlock VerticalAlignment="Center"
                                TextWrapping="Wrap"
-                               Text="This is awesome."
+                               Text="{Binding Message}"
                                Foreground="{StaticResource DarkBlueBrush}"
                                FontFamily="{StaticResource LatoRegular}" />
 
@@ -57,14 +88,38 @@
                       Panel.ZIndex="1"
                       Data="M 0,-2 L 8,8 L 20,-2"
                       StrokeThickness="0"
-                      Fill="{StaticResource ForegroundLightBrush}" />
+                      HorizontalAlignment="{Binding SentByMe,
+                                        Converter={valueConverter:SentByMeToAlignmentConverter}}"
+                      Fill="{Binding SentByMe, 
+                                        Converter={valueConverter:SentByMeToColorConverter}}" />
 
-                <TextBlock Grid.Row="2"
-                           Text="11:54 am"
-                           Margin="0 -5 0 0"
-                           TextAlignment="Right"
-                           Foreground="{StaticResource ForegroundLightBrush}"
-                           FontSize="{StaticResource FontSizeSmall}" />
+                <!--Time container-->
+                <StackPanel Grid.Row="2"
+                            Orientation="Horizontal"
+                            Name="MessageTimeContainer"
+                            Opacity="0">
+
+                    <!--Sent time-->
+                    <TextBlock
+                        Text="{Binding MessageSentTime,
+                                        Converter={valueConverter:TimeToDisplayValueConverter}}"
+                        Margin="0 0 15 0"
+                        HorizontalAlignment="Right"
+                        Foreground="{StaticResource ForegroundLightBrush}"
+                        FontSize="{StaticResource FontSizeSmall}" />
+
+
+                    <!-- Read Time -->
+                    <TextBlock
+                        Text="{Binding MessageReadTime,
+                                        Converter={valueConverter:TimeToReadTimeConverter}}"
+                        Margin="0 0 0 0"
+                        HorizontalAlignment="Right"
+                        Foreground="{StaticResource DarkBlueBrush}"
+                        FontSize="{StaticResource FontSizeSmall}" />
+
+
+                </StackPanel>
 
             </Grid>
 

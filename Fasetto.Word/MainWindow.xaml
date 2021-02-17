@@ -29,8 +29,7 @@
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Window}">
                         <!--  Outer border with the dropshadow margin  -->
-                        <Border
-                            Padding="{Binding OuterMarginSizeThickness, FallbackValue=10}">
+                        <Border Padding="{Binding OuterMarginSizeThickness, FallbackValue=10}">
                             <!--  Main Window Outline  -->
                             <Grid>
                                 <!--  Opacity mask for corners on grid  -->
@@ -40,12 +39,9 @@
                                     CornerRadius="{Binding WindowCornerRadius, FallbackValue=10}" />
 
                                 <!--  Window border and drop shadow outline margin  -->
-                                <Border
-                                    Background="{StaticResource ForegroundLightBrush}"
-                                    CornerRadius="{Binding WindowCornerRadius, FallbackValue=10}">
+                                <Border Background="{StaticResource ForegroundLightBrush}" CornerRadius="{Binding WindowCornerRadius, FallbackValue=10}">
                                     <Border.Effect>
-                                        <DropShadowEffect Opacity="0.2"
-                                            ShadowDepth="0" />
+                                        <DropShadowEffect Opacity="0.2" ShadowDepth="0" />
                                     </Border.Effect>
                                 </Border>
 
@@ -54,15 +50,13 @@
 
                                     <!--  Corner Clipping  -->
                                     <Grid.OpacityMask>
-                                        <VisualBrush
-                                            Visual="{Binding ElementName=Container}" />
+                                        <VisualBrush Visual="{Binding ElementName=Container}" />
                                     </Grid.OpacityMask>
 
                                     <!--  Grid Definition  -->
                                     <Grid.RowDefinitions>
                                         <!--  Title bar  -->
-                                        <RowDefinition
-                                            Height="{Binding TitleHeightGridLength}" />
+                                        <RowDefinition Height="{Binding TitleHeightGridLength}" />
                                         <!--  Drop shadow  -->
                                         <RowDefinition Height="Auto" />
                                         <!--  Window Content  -->
@@ -86,8 +80,7 @@
                                             Padding="5"
                                             Command="{Binding MenuCommand}"
                                             Style="{StaticResource SystemIconButton}">
-                                            <Image
-                                                Source="/Resources/Logo/logo.png" />
+                                            <Image Source="/Resources/Logo/logo.png" />
                                         </Button>
 
                                         <!--  Title  -->
@@ -100,18 +93,10 @@
                                                     Margin="0,0,0,-5"
                                                     FontFamily="{StaticResource LatoBold}"
                                                     FontSize="{StaticResource FontSizeXXLarge}">
-                                                    <Run
-                                                        Foreground="{StaticResource WordOrangeBrush}"
-                                                        Text="W" />
-                                                    <Run
-                                                        Foreground="{StaticResource WordBlueBrush}"
-                                                        Text="O" />
-                                                    <Run
-                                                        Foreground="{StaticResource WordRedBrush}"
-                                                        Text="R" />
-                                                    <Run
-                                                        Foreground="{StaticResource WordGreenBrush}"
-                                                        Text="D" />
+                                                    <Run Foreground="{StaticResource WordOrangeBrush}" Text="W" />
+                                                    <Run Foreground="{StaticResource WordBlueBrush}" Text="O" />
+                                                    <Run Foreground="{StaticResource WordRedBrush}" Text="R" />
+                                                    <Run Foreground="{StaticResource WordGreenBrush}" Text="D" />
                                                 </TextBlock>
                                                 <TextBox
                                                     HorizontalAlignment="Center"
@@ -121,8 +106,7 @@
                                         </Viewbox>
 
                                         <!--  Window Button  -->
-                                        <StackPanel Grid.Column="2"
-                                                    Orientation="Horizontal">
+                                        <StackPanel Grid.Column="2" Orientation="Horizontal">
                                             <Button
                                                 Command="{Binding MinimizeCommand}"
                                                 Content="_"
@@ -145,26 +129,17 @@
                                         BorderThickness="0,0.4,0,0">
                                         <!--  Underline  -->
                                         <Border.BorderBrush>
-                                            <LinearGradientBrush
-                                                StartPoint="0, 0"
-                                                EndPoint="1, 0">
-                                                <GradientStop Offset="0.0"
-                                                    Color="{StaticResource ForegroundLight}" />
-                                                <GradientStop Offset="0.5"
-                                                    Color="{StaticResource ForegroundMain}" />
-                                                <GradientStop Offset="1.0"
-                                                    Color="{StaticResource ForegroundLight}" />
+                                            <LinearGradientBrush StartPoint="0, 0" EndPoint="1, 0">
+                                                <GradientStop Offset="0.0" Color="{StaticResource ForegroundLight}" />
+                                                <GradientStop Offset="0.5" Color="{StaticResource ForegroundMain}" />
+                                                <GradientStop Offset="1.0" Color="{StaticResource ForegroundLight}" />
                                             </LinearGradientBrush>
                                         </Border.BorderBrush>
                                         <!--  Drop shadow  -->
                                         <Border.Background>
-                                            <LinearGradientBrush
-                                                StartPoint="0, 0"
-                                                EndPoint="0, 1">
-                                                <GradientStop Offset="0.0"
-                                                    Color="{StaticResource BackgroundVeryLight}" />
-                                                <GradientStop Offset="1.0"
-                                                    Color="{StaticResource ForegroundLight}" />
+                                            <LinearGradientBrush StartPoint="0, 0" EndPoint="0, 1">
+                                                <GradientStop Offset="0.0" Color="{StaticResource BackgroundVeryLight}" />
+                                                <GradientStop Offset="1.0" Color="{StaticResource ForegroundLight}" />
                                             </LinearGradientBrush>
                                         </Border.Background>
                                     </Border>
@@ -174,8 +149,7 @@
                                         Grid.Row="2"
                                         Padding="{Binding PageContentPadding}"
                                         ClipToBounds="True">
-                                        <ContentPresenter
-                                            Content="{TemplateBinding Content}" />
+                                        <ContentPresenter Content="{TemplateBinding Content}" />
                                     </Border>
                                 </Grid>
                             </Grid>
@@ -223,9 +197,7 @@
                 Grid.Column="1"
                 d:DataContext=""
                 CurrentPage="{Binding}"
-                DataContext="{Binding Path=ApplicationViewModel.CurrentPage, 
-                                Source={x:Static viewModel:ViewModelLocator.Instance}, 
-                                Converter={valueConverter:ApplicationPageConverter}}" />
+                DataContext="{Binding Path=ApplicationViewModel.CurrentPage, Source={x:Static viewModel:ViewModelLocator.Instance}, Converter={valueConverter:ApplicationPageConverter}}" />
         </Grid>
     </Border>
 

@@ -6,7 +6,7 @@
 
 #endregion
 
-namespace Fasetto.Word.Core.ViewModel.Chat.DesignData
+namespace Fasetto.Word.Core.ViewModel.Chat.ChatList.DesignData
 {
     /// <summary>
     ///     The design time data for a <see cref="ChatListItemViewModel" />

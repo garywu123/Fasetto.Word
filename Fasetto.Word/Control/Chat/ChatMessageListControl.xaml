@@ -5,10 +5,12 @@
              xmlns:designData="clr-namespace:Fasetto.Word.Core.ViewModel.Chat.DesignData;assembly=Fasetto.Word.Core"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:chat="clr-namespace:Fasetto.Word.Control.Chat"
+             xmlns:designData1="clr-namespace:Fasetto.Word.Core.ViewModel.Chat.ChatMessage.DesignData;assembly=Fasetto.Word.Core"
              d:DesignHeight="600"
              d:DesignWidth="300"
              mc:Ignorable="d">
-    <Grid DataContext="{x:Static designData:ChatListDesignViewModel.Instance}">
+    <Grid DataContext="{x:Static designData1:ChatMessageListDesignViewModel.Instance}"
+          VerticalAlignment="Bottom">
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <ItemsControl ItemsSource="{Binding Items}">
                 <ItemsControl.ItemTemplate>

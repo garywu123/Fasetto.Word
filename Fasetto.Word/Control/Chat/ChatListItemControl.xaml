@@ -6,6 +6,7 @@
     xmlns:designData="clr-namespace:Fasetto.Word.Core.ViewModel.Chat.DesignData;assembly=Fasetto.Word.Core"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:valueConverter="clr-namespace:Fasetto.Word.ValueConverter"
+    xmlns:designData1="clr-namespace:Fasetto.Word.Core.ViewModel.Chat.ChatList.DesignData;assembly=Fasetto.Word.Core"
     mc:Ignorable="d">
 
     <UserControl.Resources>
@@ -125,7 +126,7 @@
 
     <!--  使用前缀d：代表这个DataContext是设计时候使用的数据，在实际运行过程中将不会产生该数据。  -->
     <ContentControl
-        d:DataContext="{x:Static designData:ChatListItemDesignModel.Instance}"
+        d:DataContext="{x:Static designData1:ChatListItemDesignModel.Instance}"
         Content=""
         Style="{StaticResource ContentStyle}" />
 
