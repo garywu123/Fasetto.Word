@@ -16,7 +16,7 @@
 
 
     <Border Background="Transparent">
-        <Grid>
+        <Grid FocusManager.FocusedElement="{Binding ElementName=emailTextBox}">
             <!--  Login in white box  -->
             <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
                 <StackPanel
@@ -48,9 +48,11 @@
 
                             <!--  Email  -->
                             <TextBox
+                                Name="emailTextBox"
                                 Style="{StaticResource InputTextBox}"
                                 Tag="Email"
-                                Text="{Binding Email}" />
+                                Text="{Binding Email}" 
+                                attachedProperty:IsFocusProperty.Value ="True"/>
 
                             <!--  Password  -->
                             <PasswordBox
@@ -65,7 +67,9 @@
                                 Command="{Binding LoginCommand}"
                                 CommandParameter="{Binding ElementName=LoginPageName}"
                                 Content="Login"
-                                FontSize="20" />
+                                FontSize="20" 
+                                IsDefault="True"
+                                />
                         </StackPanel>
 
                     </Border>
