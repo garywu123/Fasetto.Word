@@ -48,6 +48,7 @@
 
                             <!--  Email  -->
                             <TextBox
+                                attachedProperty:IsFocusProperty.Value="True"
                                 Style="{StaticResource InputTextBox}"
                                 Tag="Email"
                                 Text="{Binding Email}" />
@@ -65,16 +66,17 @@
                                 Command="{Binding RegisterCommand}"
                                 CommandParameter="{Binding ElementName=Page}"
                                 Content="Register"
-                                FontSize="20" />
+                                FontSize="20"
+                                IsDefault="True" />
                         </StackPanel>
 
                     </Border>
                     <Button
                         HorizontalAlignment="Center"
+                        Command="{Binding LoginCommand}"
                         Content="Or I already have an account"
                         FontSize="16"
-                        Style="{StaticResource TextButton}" 
-                        Command="{Binding LoginCommand }"/>
+                        Style="{StaticResource TextButton}" />
                 </StackPanel>
             </ScrollViewer>
         </Grid>

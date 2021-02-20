@@ -85,7 +85,7 @@
                                         <ColorAnimation
                                             Storyboard.TargetName="Container"
                                             Storyboard.TargetProperty="Background.Color"
-                                            To="{StaticResource LightBlue}"
+                                            To="{StaticResource WordVeryVeryLightBlue}"
                                             Duration="0:0:0.5" />
                                     </Storyboard>
                                 </BeginStoryboard>
@@ -112,7 +112,7 @@
                                 我们需要设计一个防止被覆盖的机制
                             -->
                             <DataTrigger Binding="{Binding IsSelected}" Value="True">
-                                <Setter TargetName="BackgroundBorder" Property="Background" Value="{StaticResource WordVeryLightBlueBrush}" />
+                                <Setter TargetName="BackgroundBorder" Property="Background" Value="{StaticResource WordVeryVeryLightBlueBrush}" />
                             </DataTrigger>
 
                         </ControlTemplate.Triggers>

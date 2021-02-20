@@ -49,10 +49,10 @@
                             <!--  Email  -->
                             <TextBox
                                 Name="emailTextBox"
+                                attachedProperty:IsFocusProperty.Value="True"
                                 Style="{StaticResource InputTextBox}"
                                 Tag="Email"
-                                Text="{Binding Email}" 
-                                attachedProperty:IsFocusProperty.Value ="True"/>
+                                Text="{Binding Email}" />
 
                             <!--  Password  -->
                             <PasswordBox
@@ -67,9 +67,8 @@
                                 Command="{Binding LoginCommand}"
                                 CommandParameter="{Binding ElementName=LoginPageName}"
                                 Content="Login"
-                                FontSize="20" 
-                                IsDefault="True"
-                                />
+                                FontSize="20"
+                                IsDefault="True" />
                         </StackPanel>
 
                     </Border>

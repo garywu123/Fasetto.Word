@@ -56,27 +56,38 @@ namespace Fasetto.Word.Control
             DependencyPropertyChangedEventArgs e)
         {
             // Get Frames
-            var newPageFrame = (d as PageHost).NewPage;
-            var oldPageFrame = (d as PageHost).OldPage;
+            var newPageFrame = (d as PageHost)?.NewPage;
+            var oldPageFrame = (d as PageHost)?.OldPage;
 
             // Store the current page content as the old page
-            var oldPageContent = newPageFrame.Content;
-            
-            // Remove current page from new page frame
-            newPageFrame.Content = null;
-
-            // Move the previous page into the old page frame
-            // 这个会再次引发 Page_Loaded 事件
-            oldPageFrame.Content = oldPageContent;
-
-            // Animate out previous page when the loaded event fires right after this call due to moving frames
-
-            if (oldPageContent is BasePage oldPage)
+            if (newPageFrame != null)
             {
-                oldPage.ShouldAnimateOut = true;
-                
+                var oldPageContent = newPageFrame.Content;
+
+                // Remove current page from new page frame
+                newPageFrame.Content = null;
+
+                // Move the previous page into the old page frame
+                // 这个会再次引发 Page_Loaded 事件
+                oldPageFrame.Content = oldPageContent;
+
+                // Animate out previous page when the loaded event fires right after this call due to moving frames
+
+                if (oldPageContent is BasePage oldPage)
+                {
+                    // Tell old page to animate out
+                    oldPage.ShouldAnimateOut = true;
+
+                    // Once it is done, remove it
+                    Task.Delay((int) (oldPage.SlideSeconds * 1000)).ContinueWith(t =>
+                    {
+                        // Jump back to UI thread, Remove old page
+                        Application.Current.Dispatcher.Invoke(() => oldPageFrame.Content = null);
+                    });
+                }
             }
-            newPageFrame.Content = e.NewValue;
+
+            if (newPageFrame != null) newPageFrame.Content = e.NewValue;
         }
 
         #endregion

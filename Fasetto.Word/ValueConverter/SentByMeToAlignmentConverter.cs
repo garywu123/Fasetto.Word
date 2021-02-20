@@ -14,7 +14,7 @@ namespace Fasetto.Word.ValueConverter
 {
     /// <summary>
     ///     将 bool 转为 Alignment 对齐，如果是 SentByMe，那么就对齐右边
-    /// 如果不是，则对其左边
+    ///     如果不是，则对其左边
     /// </summary>
     public class
         SentByMeToAlignmentConverter : BaseValueConverter<SentByMeToAlignmentConverter>
@@ -24,7 +24,14 @@ namespace Fasetto.Word.ValueConverter
                                        object parameter,
                                        CultureInfo culture)
         {
-            return value != null && (bool) value ? HorizontalAlignment.Right : HorizontalAlignment.Left;
+            if (parameter == null)
+                return value != null && (bool) value
+                    ? HorizontalAlignment.Right
+                    : HorizontalAlignment.Left;
+
+            return value != null && (bool) value
+                ? HorizontalAlignment.Left
+                : HorizontalAlignment.Right;
         }
 
         public override object ConvertBack(object value,

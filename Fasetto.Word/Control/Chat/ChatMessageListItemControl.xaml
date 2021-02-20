@@ -44,8 +44,11 @@
 
                     <EventTrigger RoutedEvent="MouseEnter">
                         <BeginStoryboard>
-                            <Storyboard TargetName="MessageTimeContainer" TargetProperty="Opacity">
-                                <DoubleAnimation From="0" To="1" Duration="00:00:00.5"/>
+                            <Storyboard TargetName="messageTimeContainer"
+                                        TargetProperty="Opacity">
+                                <DoubleAnimation From="0"
+                                                 To="1"
+                                                 Duration="00:00:00.5" />
                             </Storyboard>
                         </BeginStoryboard>
 
@@ -54,8 +57,10 @@
                     <!--Mouse over hides time-->
                     <EventTrigger RoutedEvent="MouseLeave">
                         <BeginStoryboard>
-                            <Storyboard TargetName="MessageTimeContainer" TargetProperty="Opacity">
-                                <DoubleAnimation To="0" Duration="00:00:00.5"/>
+                            <Storyboard TargetName="messageTimeContainer"
+                                        TargetProperty="Opacity">
+                                <DoubleAnimation To="0"
+                                                 Duration="00:00:00.5" />
                             </Storyboard>
                         </BeginStoryboard>
 
@@ -96,13 +101,17 @@
                 <!--Time container-->
                 <StackPanel Grid.Row="2"
                             Orientation="Horizontal"
-                            Name="MessageTimeContainer"
+                            Name="messageTimeContainer"
+                            HorizontalAlignment="{Binding SentByMe, 
+                                                    Converter={valueConverter:SentByMeToAlignmentConverter},
+                                                    ConverterParameter=True}"
                             Opacity="0">
 
                     <!--Sent time-->
                     <TextBlock
                         Text="{Binding MessageSentTime,
-                                        Converter={valueConverter:TimeToDisplayValueConverter}}"
+                                        Converter={valueConverter:TimeToDisplayValueConverter},
+                                        ConverterParameter=true}"
                         Margin="0 0 15 0"
                         HorizontalAlignment="Right"
                         Foreground="{StaticResource ForegroundLightBrush}"
