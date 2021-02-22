@@ -11,8 +11,8 @@
     mc:Ignorable="d">
     <Grid>
 
-        <Frame Name="OldPage" attachedProperty:NoFrameHistory.Value="True" />
-        <Frame Name="NewPage" attachedProperty:NoFrameHistory.Value="True" />
+        <ContentControl Name="OldPage"  />
+        <ContentControl Name="NewPage"  />
     </Grid>
 </UserControl>
 

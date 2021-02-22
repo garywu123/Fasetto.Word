@@ -23,7 +23,7 @@ namespace Fasetto.Word.Page
         /// <param name="page"> The page that needs animation </param>
         /// <param name="seconds"> The animation duration </param>
         /// <returns></returns>
-        public static async Task SlideAndFadeInFromRight(
+        public static async Task SlideAndFadeInFromRightAsync(
             this System.Windows.Controls.Page page,
             float seconds)
         {

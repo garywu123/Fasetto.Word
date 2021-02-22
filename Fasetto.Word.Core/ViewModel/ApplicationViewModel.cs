@@ -21,12 +21,12 @@ namespace Fasetto.Word.Core.ViewModel
         /// <summary>
         ///     The current page bind to the Window Frame Content
         /// </summary>
-        public ApplicationPage CurrentPage { get; private set; } = ApplicationPage.Login;
+        public ApplicationPage CurrentPage { get; private set; } = ApplicationPage.Chat;
 
         /// <summary>
         ///     True if the side menu should be show.
         /// </summary>
-        public bool SideMenuVisible { get; set; } = false;
+        public bool SideMenuVisible { get; set; } = true;
 
         /// <summary>
         ///     使用 GoToPage 的方法来切换页面，而不是通过直接赋值 CurrentPage

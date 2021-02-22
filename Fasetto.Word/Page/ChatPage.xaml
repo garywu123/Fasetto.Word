@@ -1,19 +1,28 @@
-﻿<page:BasePage
-    x:Class="Fasetto.Word.Page.ChatPage"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:control="clr-namespace:Fasetto.Word.Control"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    xmlns:page="clr-namespace:Fasetto.Word.Page"
-    xmlns:viewModel="clr-namespace:Fasetto.Word.Core.ViewModel;assembly=Fasetto.Word.Core"
-    Title="Chat"
-    d:DesignHeight="450"
-    d:DesignWidth="800"
-    x:TypeArguments="viewModel:LoginViewModel"
-    mc:Ignorable="d">
+﻿<page:BasePage x:Class="Fasetto.Word.Page.ChatPage"
+               xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+               xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+               xmlns:control="clr-namespace:Fasetto.Word.Control"
+               xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+               xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+               xmlns:page="clr-namespace:Fasetto.Word.Page"
+               xmlns:viewModel="clr-namespace:Fasetto.Word.Core.ViewModel;assembly=Fasetto.Word.Core"
+               d:DesignHeight="450"
+               d:DesignWidth="800"
+               x:TypeArguments="viewModel:LoginViewModel"
+               mc:Ignorable="d">
 
-    <Border>
-        <control:ChatMessageListControl />
-    </Border>
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <!--Title Bar-->
+            <RowDefinition Height="Auto" />
+            <!--Chat List-->
+            <RowDefinition Height="*" />
+            <!--Chat Input Box-->
+            <RowDefinition Height="Auto" />
+
+        </Grid.RowDefinitions>
+
+        <control:ChatMessageListControl Grid.Row="1" />
+    </Grid>
 </page:BasePage>

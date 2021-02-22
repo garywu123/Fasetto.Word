@@ -22,9 +22,9 @@ namespace Fasetto.Word.ValueConverter
             ApplicationPageConverter>
     {
         public override object Convert(object value,
-            Type targetType,
-            object parameter,
-            CultureInfo culture)
+            Type targetType = null,
+            object parameter = null,
+            CultureInfo culture = null)
         {
             Debug.WriteLine(
                 $"Application Page Number received by Converter: {(ApplicationPage) value}");

@@ -8,7 +8,6 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:viewModel1="clr-namespace:Fasetto.Word.Core.ViewModel;assembly=Fasetto.Word.Core"
     x:Name="Page"
-    Title="RegisterPage"
     d:DesignHeight="700"
     d:DesignWidth="700"
     x:TypeArguments="viewModel1:RegisterViewModel"

@@ -8,6 +8,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:valueConverter="clr-namespace:Fasetto.Word.ValueConverter"
         xmlns:viewModel="clr-namespace:Fasetto.Word.ViewModel"
+        xmlns:page="clr-namespace:Fasetto.Word.Page"
         x:Name="appWindow"
         Title="Hello Friend!"
         Width="900"
@@ -200,14 +201,6 @@
                 <ColumnDefinition Width="Auto" /> <ColumnDefinition Width="5*" />
             </Grid.ColumnDefinitions>
 
-            <!--  Left side menu  -->
-            <control:SideMenuControl Grid.Column="0"
-                                     Width="300"
-                                     attachedProperty:AnimatedSlideInFromLeftProperty.Value="{Binding Path=ApplicationViewModel.SideMenuVisible, 
-                                                            Source={x:Static viewModel:ViewModelLocator.Instance}}">
-                <control:ChatListControl VerticalAlignment="Top" />
-            </control:SideMenuControl>
-
             <!--  The Main Content on the right  -->
             <control:PageHost x:Name="mainFrame"
                               Grid.Column="1"
@@ -216,6 +209,17 @@
                               DataContext="{Binding Path=ApplicationViewModel.CurrentPage, 
                                                     Source={x:Static viewModel:ViewModelLocator.Instance},
                                                     Converter={valueConverter:ApplicationPageConverter}}" />
+
+
+            <!--  Left side menu  -->
+            <control:SideMenuControl Grid.Column="0"
+                                     Width="300"
+                                     attachedProperty:AnimatedSlideInFromLeftProperty.Value="{Binding Path=ApplicationViewModel.SideMenuVisible, 
+                                                            Source={x:Static viewModel:ViewModelLocator.Instance}}">
+                <control:ChatListControl VerticalAlignment="Top" />
+            </control:SideMenuControl>
+
+           
         </Grid>
     </Border>
 

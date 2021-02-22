@@ -1,7 +1,11 @@
-﻿using System.Threading.Tasks;
+﻿using System.ComponentModel;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using Fasetto.Word.Core.IoC;
+using Fasetto.Word.Core.ViewModel;
 using Fasetto.Word.Page;
+using Fasetto.Word.ValueConverter;
 
 namespace Fasetto.Word.Control
 {
@@ -39,6 +43,15 @@ namespace Fasetto.Word.Control
         public PageHost()
         {
             InitializeComponent();
+
+            // if we are in design mode, show current page
+            if (DesignerProperties.GetIsInDesignMode(this))
+            {
+                this.NewPage.Content =
+                    (BasePage) new ApplicationPageConverter().Convert(
+                        IoC.Get<ApplicationViewModel>().CurrentPage);
+
+            }
         }
 
         #endregion

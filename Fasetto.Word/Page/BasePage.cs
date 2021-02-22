@@ -6,9 +6,11 @@
 
 #endregion
 
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using Fasetto.Word.Animation;
 using Fasetto.Word.Core.ViewModel.Base;
 
@@ -17,7 +19,7 @@ namespace Fasetto.Word.Page
     /// <summary>
     ///     The basic page for all pages to gain base functionality
     /// </summary>
-    public class BasePage : System.Windows.Controls.Page
+    public class BasePage : UserControl
     {
         #region Public Property
 
@@ -52,6 +54,9 @@ namespace Fasetto.Word.Page
         /// </summary>
         public BasePage()
         {
+            // Don't bother animating in design time
+            if (DesignerProperties.GetIsInDesignMode(this))
+                return;
             // If we are animating in, hide to begin with
             if (PageLoadAnimation != PageAnimation.None)
                 Visibility = Visibility.Collapsed;
@@ -71,6 +76,8 @@ namespace Fasetto.Word.Page
         /// <param name="e"></param>
         private async void BasePage_Loaded(object sender, RoutedEventArgs e)
         {
+            
+
             // 如果这个 Page 不要求有退出动画（通常在更换page的时候会设置前一个页面要带有退出动画）
             if (ShouldAnimateOut)
                 // 在异步现场上创建动画
@@ -93,7 +100,9 @@ namespace Fasetto.Word.Page
                 // 想要让page从左边滑入，也就是说page的左边界应该在window的右边界上
                 case PageAnimation.SlideAndFadeInFromRight:
                     // Start animation
-                    await this.SlideAndFadeInFromRight(SlideSeconds * 2);
+                    if (Application.Current.MainWindow != null)
+                        await this.SlideAndFadeInFromRightAsync(SlideSeconds * 2,
+                            width: (int) Application.Current.MainWindow.Width);
                     break;
             }
         }
@@ -106,7 +115,9 @@ namespace Fasetto.Word.Page
             switch (PageUnloadAnimation)
             {
                 case PageAnimation.SlideAndFadeOutToLeft:
-                    await this.SlideAndFadeOutToLeft(SlideSeconds);
+                    if (Application.Current.MainWindow != null)
+                        await this.SlideAndFadeOutToLeftAsync(SlideSeconds,
+                            width: (int) Application.Current.MainWindow.Width);
                     break;
             }
         }
