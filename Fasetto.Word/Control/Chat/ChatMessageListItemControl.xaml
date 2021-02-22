@@ -9,7 +9,7 @@
     d:DesignWidth="334"
     mc:Ignorable="d">
 
-    <Border Padding="5" d:DataContext="{x:Static designData:ChatMessageListItemDesignViewModel.Instance}">
+    <Border Padding="5" DataContext="{x:Static designData:ChatMessageListItemDesignViewModel.Instance}">
 
         <Grid>
 

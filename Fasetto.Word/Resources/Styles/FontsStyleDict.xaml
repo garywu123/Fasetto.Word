@@ -64,4 +64,12 @@
         &#xf7d9;
     </system:String>
 
+    <system:String x:Key="FontAwesomeSearchIcon">
+        &#xf002;
+    </system:String>
+
+    <system:String x:Key="FontAwesomeEllipsisVIcon">
+        &#xf142;
+    </system:String>
+
 </ResourceDictionary>

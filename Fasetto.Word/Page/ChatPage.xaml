@@ -23,6 +23,35 @@
 
         </Grid.RowDefinitions>
 
+        <!--Title Bar-->
+        <Grid Height="50">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" /> <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <!--Title Text-->
+            <TextBlock Text="Parnell"
+                       Foreground="{StaticResource ForegroundLightBrush}"
+                       FontSize="{StaticResource FontSizeXLarge}"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center" 
+                       Grid.ColumnSpan="2"
+                       FontFamily="{StaticResource LatoRegular}"/>
+
+            <!--  Main Button  -->
+            <StackPanel Grid.Column="1"
+                        Orientation="Horizontal">
+                <!--  User Button  -->
+                <Button Content="{StaticResource FontAwesomeSearchIcon}"
+                        Style="{StaticResource IconButtonStyle}" />
+                <Button Content="{StaticResource FontAwesomeEllipsisVIcon}"
+                        Style="{StaticResource IconButtonStyle}" />
+
+
+            </StackPanel>
+
+        </Grid>
+
+
         <control:ChatMessageListControl Grid.Row="1" />
     </Grid>
 </page:BasePage>

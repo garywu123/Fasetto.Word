@@ -204,7 +204,6 @@
             <!--  The Main Content on the right  -->
             <control:PageHost x:Name="mainFrame"
                               Grid.Column="1"
-                              d:DataContext=""
                               CurrentPage="{Binding}"
                               DataContext="{Binding Path=ApplicationViewModel.CurrentPage, 
                                                     Source={x:Static viewModel:ViewModelLocator.Instance},

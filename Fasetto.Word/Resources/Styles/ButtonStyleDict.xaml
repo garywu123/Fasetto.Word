@@ -243,7 +243,7 @@
         BasedOn="{StaticResource BaseStyleForControl}"
         TargetType="{x:Type Button}">
 
-        <Setter Property="Background" Value="{StaticResource WordBlueBrush}" />
+        <Setter Property="Background" Value="{StaticResource WordTransparentBlueBrush}" />
         <Setter Property="Foreground" Value="{StaticResource ForegroundLightBrush}" />
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="FontSize" Value="{StaticResource FontSizeXXLarge}" />
@@ -301,7 +301,7 @@
                                     <ColorAnimation
                                         Storyboard.TargetName="border"
                                         Storyboard.TargetProperty="Background.Color"
-                                        To="{StaticResource WordBlue}"
+                                        To="{StaticResource WordTransparentBlue}"
                                         Duration="0:0:0.5" />
                                 </Storyboard>
                             </BeginStoryboard>
