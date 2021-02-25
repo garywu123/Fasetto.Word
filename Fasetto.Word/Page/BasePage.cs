@@ -76,8 +76,6 @@ namespace Fasetto.Word.Page
         /// <param name="e"></param>
         private async void BasePage_Loaded(object sender, RoutedEventArgs e)
         {
-            
-
             // 如果这个 Page 不要求有退出动画（通常在更换page的时候会设置前一个页面要带有退出动画）
             if (ShouldAnimateOut)
                 // 在异步现场上创建动画

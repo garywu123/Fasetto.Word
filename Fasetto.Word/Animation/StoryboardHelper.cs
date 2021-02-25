@@ -27,7 +27,10 @@ namespace Fasetto.Word.Animation
         /// <param name="seconds">the time the animation will take</param>
         /// <param name="offset">the distance of the right to start from</param>
         /// <param name="decelerationRatio">the rate of deceleration</param>
-        /// <param name="keepMargin"> Whether to keep the element at the same width during animation</param>
+        /// <param name="keepMargin">
+        ///     Whether to keep the element at the same width during
+        ///     animation
+        /// </param>
         public static void AddSlideFromRight(this Storyboard storyboard,
                                              float seconds,
                                              double offset,
@@ -56,9 +59,46 @@ namespace Fasetto.Word.Animation
         /// </summary>
         /// <param name="storyboard">The storyboard to add the animation to</param>
         /// <param name="seconds">the time the animation will take</param>
+        /// <param name="offset">the distance of the right to start from</param>
+        /// <param name="decelerationRatio">the rate of deceleration</param>
+        /// <param name="keepMargin">
+        ///     Whether to keep the element at the same width during
+        ///     animation
+        /// </param>
+        public static void AddSlideFromBottom(this Storyboard storyboard,
+                                              float seconds,
+                                              double offset,
+                                              float decelerationRatio = 0.9f,
+                                              bool keepMargin = true)
+        {
+            // Create the margin animate from right
+            // Thickness相当于定义了起始点和终点
+            var animation = new ThicknessAnimation
+            {
+                Duration = new Duration(TimeSpan.FromSeconds(seconds)),
+                // 从界面的底部出发
+                From = new Thickness(0, keepMargin ? offset : 0, 0, -offset),
+                // 到原本 page 应该显示的地方
+                To = new Thickness(0),
+                DecelerationRatio = decelerationRatio
+            };
+            // 将动画应用在目标元素的margin属性上
+            Storyboard.SetTargetProperty(animation, new PropertyPath("Margin"));
+            // storyboard 设置动画，并设置哪个元素需要使用动画
+            storyboard.Children.Add(animation);
+        }
+
+        /// <summary>
+        ///     Add the slide and fade in animation to the storyboard
+        /// </summary>
+        /// <param name="storyboard">The storyboard to add the animation to</param>
+        /// <param name="seconds">the time the animation will take</param>
         /// <param name="offset">the distance of the left to start from</param>
         /// <param name="decelerationRatio">the rate of deceleration</param>
-        /// <param name="keepMargin"> Whether to keep the element at the same width during animation</param>
+        /// <param name="keepMargin">
+        ///     Whether to keep the element at the same width during
+        ///     animation
+        /// </param>
         public static void AddSlideFromLeft(this Storyboard storyboard,
                                             float seconds,
                                             double offset,
@@ -89,7 +129,10 @@ namespace Fasetto.Word.Animation
         /// <param name="seconds">the time the animation will take</param>
         /// <param name="offset">the distance of the left to end at</param>
         /// <param name="decelerationRatio">the rate of deceleration</param>
-        /// <param name="keepMargin"> Whether to keep the element at the same width during animation</param>
+        /// <param name="keepMargin">
+        ///     Whether to keep the element at the same width during
+        ///     animation
+        /// </param>
         public static void AddSlideToLeft(this Storyboard storyboard,
                                           float seconds,
                                           double offset,
@@ -122,7 +165,10 @@ namespace Fasetto.Word.Animation
         /// <param name="seconds">the time the animation will take</param>
         /// <param name="offset">the distance of the Right to end at</param>
         /// <param name="decelerationRatio">the rate of deceleration</param>
-        /// <param name="keepMargin"> Whether to keep the element at the same width during animation</param>
+        /// <param name="keepMargin">
+        ///     Whether to keep the element at the same width during
+        ///     animation
+        /// </param>
         public static void AddSlideToRight(this Storyboard storyboard,
                                            float seconds,
                                            double offset,
@@ -138,6 +184,42 @@ namespace Fasetto.Word.Animation
                 From = new Thickness(0),
                 // 到页面的右面
                 To = new Thickness(keepMargin ? offset : 0, 0, -offset, 0),
+                DecelerationRatio = decelerationRatio
+            };
+            // 将动画应用在目标元素的margin属性上
+            Storyboard.SetTargetProperty(animation, new PropertyPath("Margin"));
+            // storyboard 设置动画，并设置哪个元素需要使用动画
+            storyboard.Children.Add(animation);
+        }
+
+        /// <summary>
+        ///     Add the slide to bottom animation to the storyboard
+        /// </summary>
+        /// <param name="storyboard">The storyboard to add the animation to</param>
+        /// <param name="seconds">the time the animation will take</param>
+        /// <param name="offset">the distance of the left to end at</param>
+        /// <param name="decelerationRatio">the rate of deceleration</param>
+        /// <param name="keepMargin">
+        ///     Whether to keep the element at the same width during
+        ///     animation
+        /// </param>
+        public static void AddSlideToBottom(this Storyboard storyboard,
+                                            float seconds,
+                                            double offset,
+                                            float decelerationRatio = 0.9f,
+                                            bool keepMargin = true)
+        {
+            // Create the margin animate from right
+            // Thickness相当于定义了起始点和终点
+            Debug.WriteLine($"Is Keep Margin: {(keepMargin ? offset : 0)}", "Debug");
+
+            var animation = new ThicknessAnimation
+            {
+                Duration = new Duration(TimeSpan.FromSeconds(seconds)),
+                // 到原本 page 应该显示的地方
+                From = new Thickness(0),
+                // 到页面的左面
+                To = new Thickness(0, keepMargin ? offset : 0, 0, -offset),
                 DecelerationRatio = decelerationRatio
             };
             // 将动画应用在目标元素的margin属性上

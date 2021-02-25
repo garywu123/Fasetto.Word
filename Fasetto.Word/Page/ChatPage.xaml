@@ -6,12 +6,14 @@
                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                xmlns:page="clr-namespace:Fasetto.Word.Page"
                xmlns:viewModel="clr-namespace:Fasetto.Word.Core.ViewModel;assembly=Fasetto.Word.Core"
+               xmlns:chatMessage="clr-namespace:Fasetto.Word.Core.ViewModel.Chat.ChatMessage;assembly=Fasetto.Word.Core"
+               xmlns:attachedProperty="clr-namespace:Fasetto.Word.AttachedProperty"
                d:DesignHeight="450"
                d:DesignWidth="800"
-               x:TypeArguments="viewModel:LoginViewModel"
+               x:TypeArguments="chatMessage:ChatMessageListViewModel"
                mc:Ignorable="d">
 
-    <Grid>
+    <Grid Name="chatPage">
 
         <Grid.RowDefinitions>
             <!--Title Bar-->
@@ -33,25 +35,87 @@
                        Foreground="{StaticResource ForegroundLightBrush}"
                        FontSize="{StaticResource FontSizeXLarge}"
                        HorizontalAlignment="Center"
-                       VerticalAlignment="Center" 
+                       VerticalAlignment="Center"
                        Grid.ColumnSpan="2"
-                       FontFamily="{StaticResource LatoRegular}"/>
+                       FontFamily="{StaticResource LatoRegular}" />
 
             <!--  Main Button  -->
             <StackPanel Grid.Column="1"
                         Orientation="Horizontal">
                 <!--  User Button  -->
                 <Button Content="{StaticResource FontAwesomeSearchIcon}"
-                        Style="{StaticResource IconButtonStyle}" />
+                        Style="{StaticResource IconGrowButton}" />
                 <Button Content="{StaticResource FontAwesomeEllipsisVIcon}"
-                        Style="{StaticResource IconButtonStyle}" />
-
+                        Style="{StaticResource IconGrowButton}" />
 
             </StackPanel>
 
         </Grid>
 
-
+        <!-- Chat Message List-->
         <control:ChatMessageListControl Grid.Row="1" />
+
+        <!-- Attachment Menu Popup -->
+        <control:BubbleContent Grid.Row="1"
+                               VerticalAlignment="Bottom"
+                               HorizontalAlignment="Left"
+                               DataContext="{Binding AttachmentPopupMenu}"
+                               attachedProperty:AnimateSlideInFromBottomProperty.Value="{Binding DataContext.AttachmentMenuVisible,
+                                    ElementName=chatPage}"/>
+
+        <!-- Chat Text Input Box -->
+        <Grid Grid.Row="2"
+              MinHeight="50"
+              MaxHeight="100"
+              Background="{StaticResource ForegroundLightBrush}">
+            <Grid.ColumnDefinitions>
+                <!-- Attach Button -->
+                <ColumnDefinition Width="Auto" />
+                <!-- Text entry box -->
+                <ColumnDefinition Width="*" />
+                <!--Additional Buttons-->
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <!--Paper Clip Button-->
+            <Button Grid.Column="0"
+                    Style="{StaticResource IconGrowButton}"
+                    Content="{StaticResource FontAwesomePaperclipIcon}" 
+                    Foreground="{StaticResource ForegroundDarkBrush}"
+                    Height="{Binding MinHeight, 
+                                RelativeSource={RelativeSource AncestorType=Grid}}"
+                    Command="{Binding AttachmentButtonCommand}"/>
+
+            <!--Input Message Box -->
+            <TextBox Grid.Column="1"
+                     Padding="0 10"
+                     Tag="Write a Message..."
+                     FontSize="{StaticResource FontSizeRegular}"
+                     BorderThickness="0"
+                     AcceptsReturn="True"
+                     AcceptsTab="True"
+                     VerticalContentAlignment="Center"
+                     VerticalScrollBarVisibility="Auto"/>
+
+            <!-- Additional Buttons-->
+            <StackPanel Grid.Column="2"
+                        Orientation="Horizontal"
+                        Margin="0 0 8 0">
+
+                <!--Emoji Button-->
+                <Button Style="{StaticResource IconGrowButton}"
+                        Content="{StaticResource FontAwesomeSmileEmojiIcon}"
+                        Height="{Binding MinHeight, RelativeSource={RelativeSource AncestorType=Grid}}"
+                        Foreground="{StaticResource WordOrangeBrush}" />
+
+                <!-- Send Button -->
+                <Button Content="Send"
+                        Padding="8"
+                        Background="{StaticResource WordGreenBrush}"
+                        FontSize="{StaticResource FontSizeRegular}" />
+            </StackPanel>
+
+        </Grid>
+
     </Grid>
 </page:BasePage>

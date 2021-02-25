@@ -11,8 +11,8 @@
     mc:Ignorable="d">
     <Grid>
 
-        <ContentControl Name="OldPage"  />
-        <ContentControl Name="NewPage"  />
+        <ContentControl Name="OldPage" />
+        <ContentControl Name="NewPage" />
     </Grid>
 </UserControl>
 

@@ -103,4 +103,25 @@ namespace Fasetto.Word.AttachedProperty
             }
         }
     }
+
+    /// <summary>
+    /// Animates a framework element sliding up from the bottom on show and sliding out to the bottom on hide.
+    /// </summary>
+    public class
+        AnimateSlideInFromBottomProperty : AnimateBaseProperty<
+            AnimateSlideInFromBottomProperty>
+    {
+        protected override async void DoAnimationAsync(FrameworkElement element, bool value)
+        {
+            if (value)
+            {
+                // 进入动画，如果是首次加载，设置动画事件为 0，让元素直接隐藏
+                await element.SlideAndFadeInFromBottomAsync(FirstLoad ? 0 : 0.3f, keepMargin: false);
+            }
+            else
+            {
+                await element.SlideAndFadeOutToBottomAsync(FirstLoad ? 0 : 0.3f, keepMargin: false);
+            }
+        }
+    }
 }

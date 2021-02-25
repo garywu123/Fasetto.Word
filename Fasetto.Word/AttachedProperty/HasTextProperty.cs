@@ -22,8 +22,7 @@ namespace Fasetto.Word.AttachedProperty
         public override void OnValueChanged(DependencyObject sender,
                                             DependencyPropertyChangedEventArgs e)
         {
-            var passwordBox = sender as PasswordBox;
-            if (passwordBox == null) return;
+            if (!(sender is PasswordBox passwordBox)) return;
 
             passwordBox.PasswordChanged -= PasswordBox_PasswordChanged;
 

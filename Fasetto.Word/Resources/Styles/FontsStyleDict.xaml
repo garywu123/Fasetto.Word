@@ -72,4 +72,12 @@
         &#xf142;
     </system:String>
 
+    <system:String x:Key="FontAwesomePaperclipIcon">
+        &#xf0c6;
+    </system:String>
+
+    <system:String x:Key="FontAwesomeSmileEmojiIcon">
+        &#xf118;
+    </system:String>
+
 </ResourceDictionary>
