@@ -18,21 +18,29 @@ namespace Fasetto.Word.Core.ViewModel.Chat.ChatMessage
     /// </summary>
     public class ChatMessageListViewModel : BasicViewModel
     {
-
         #region Public Property
 
         /// <summary>
-        /// The chat list items for the list
+        ///     The chat list items for the list
         /// </summary>
         public List<ChatMessageListItemViewModel> Items { get; set; }
 
         /// <summary>
-        /// True to show the attachment menu
+        ///     True to show the attachment menu
         /// </summary>
         public bool AttachmentMenuVisible { get; set; }
 
         /// <summary>
-        /// The view model for the attachment menu
+        ///     True if any popup menus are visible
+        /// </summary>
+        public bool AnyPopupVisible
+        {
+            get => AttachmentMenuVisible;
+            set => AttachmentMenuVisible = value;
+        }
+
+        /// <summary>
+        ///     The view model for the attachment menu
         /// </summary>
         public ChatAttachmentPopupMenuViewModel AttachmentPopupMenu { get; set; }
 
@@ -41,11 +49,14 @@ namespace Fasetto.Word.Core.ViewModel.Chat.ChatMessage
         #region Public Commands
 
         /// <summary>
-        /// The command for when the attachment button is clicked
+        ///     The command for when the attachment button is clicked
         /// </summary>
         public ICommand AttachmentButtonCommand { get; set; }
 
-        
+        /// <summary>
+        ///     The command for when the area outside of any popup is clicked.
+        /// </summary>
+        public ICommand PopupClickAwayCommand { get; set; }
 
         #endregion
 
@@ -54,15 +65,17 @@ namespace Fasetto.Word.Core.ViewModel.Chat.ChatMessage
         public ChatMessageListViewModel()
         {
             AttachmentButtonCommand = new RelayCommand(AttachmentButton);
+            PopupClickAwayCommand = new RelayCommand(PopupClickAwayButton);
 
             // make a default attach menu
             AttachmentPopupMenu = new ChatAttachmentPopupMenuViewModel();
         }
 
         #endregion
- 
+
 
         #region Command Methods
+
         /// <summary>
         ///     When the attachment button is clicked, show/hide the attachment popup
         /// </summary>
@@ -70,7 +83,15 @@ namespace Fasetto.Word.Core.ViewModel.Chat.ChatMessage
         {
             // Toggle menu visibility 
             AttachmentMenuVisible ^= true;
+        }
 
+        /// <summary>
+        ///     When the popup click away area is clicked hide any popups
+        /// </summary>
+        private void PopupClickAwayButton()
+        {
+            // Toggle menu visibility 
+            AnyPopupVisible = false;
         }
 
         #endregion

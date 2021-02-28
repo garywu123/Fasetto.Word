@@ -11,6 +11,7 @@
                d:DesignHeight="450"
                d:DesignWidth="800"
                x:TypeArguments="chatMessage:ChatMessageListViewModel"
+               xmlns:valueConverter="clr-namespace:Fasetto.Word.ValueConverter"
                mc:Ignorable="d">
 
     <Grid Name="chatPage">
@@ -25,8 +26,22 @@
 
         </Grid.RowDefinitions>
 
+        <!--Popup Overlay -->
+        <Border Background="Transparent"
+                Grid.RowSpan="2"
+                Panel.ZIndex="1"
+                Visibility="{Binding DataContext.AnyPopupVisible,
+                                    ElementName=chatPage, Converter={valueConverter:BooleanToVisibilityConverter},
+                                    ConverterParameter=reverse}">
+            <Border.InputBindings>
+                <MouseBinding MouseAction="LeftClick" Command="{Binding PopupClickAwayCommand}"/>
+            </Border.InputBindings>
+
+        </Border>
+
         <!--Title Bar-->
-        <Grid Height="50">
+        <Grid Grid.Row="0"
+              Height="50">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" /> <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
@@ -53,7 +68,8 @@
         </Grid>
 
         <!-- Chat Message List-->
-        <control:ChatMessageListControl Grid.Row="1" />
+        <control:ChatMessageListControl Grid.Row="1" 
+                                        Panel.ZIndex="1"/>
 
         <!-- Attachment Menu Popup -->
         <control:BubbleContent Grid.Row="1"
@@ -61,13 +77,15 @@
                                HorizontalAlignment="Left"
                                DataContext="{Binding AttachmentPopupMenu}"
                                attachedProperty:AnimateSlideInFromBottomProperty.Value="{Binding DataContext.AttachmentMenuVisible,
-                                    ElementName=chatPage}"/>
+                                    ElementName=chatPage}"
+                               Panel.ZIndex="2"/>
 
         <!-- Chat Text Input Box -->
         <Grid Grid.Row="2"
               MinHeight="50"
               MaxHeight="100"
-              Background="{StaticResource ForegroundLightBrush}">
+              Background="{StaticResource ForegroundLightBrush}"
+              Panel.ZIndex="3">
             <Grid.ColumnDefinitions>
                 <!-- Attach Button -->
                 <ColumnDefinition Width="Auto" />
@@ -76,6 +94,8 @@
                 <!--Additional Buttons-->
                 <ColumnDefinition Width="Auto" />
             </Grid.ColumnDefinitions>
+
+            
 
             <!--Paper Clip Button-->
             <Button Grid.Column="0"
@@ -95,7 +115,10 @@
                      AcceptsReturn="True"
                      AcceptsTab="True"
                      VerticalContentAlignment="Center"
-                     VerticalScrollBarVisibility="Auto"/>
+                     VerticalScrollBarVisibility="Auto"
+                     >
+                
+            </TextBox>
 
             <!-- Additional Buttons-->
             <StackPanel Grid.Column="2"
@@ -104,7 +127,8 @@
 
                 <!--Emoji Button-->
                 <Button Style="{StaticResource IconGrowButton}"
-                        Content="{StaticResource FontAwesomeSmileEmojiIcon}"
+                        Content="{StaticResource 
+                    FontAwesomeSmileEmojiIcon}"
                         Height="{Binding MinHeight, RelativeSource={RelativeSource AncestorType=Grid}}"
                         Foreground="{StaticResource WordOrangeBrush}" />
 

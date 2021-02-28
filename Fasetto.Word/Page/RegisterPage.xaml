@@ -48,7 +48,6 @@
                             <!--  Email  -->
                             <TextBox
                                 attachedProperty:IsFocusProperty.Value="True"
-                                Style="{StaticResource InputTextBox}"
                                 Tag="Email"
                                 Text="{Binding Email}" />
 
