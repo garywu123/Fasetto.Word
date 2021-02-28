@@ -13,9 +13,10 @@ namespace Fasetto.Word.Core.ViewModel.PopupMenu
     /// <summary>
     ///     A view model for any popup menus
     /// </summary>
-    public class BasePopupMenuViewModel : BasicViewModel
+    public class BasePopupViewModel : BasicViewModel
     {
         #region Properties
+
         /// <summary>
         /// Background color of bubble content control
         /// </summary>
@@ -26,15 +27,20 @@ namespace Fasetto.Word.Core.ViewModel.PopupMenu
         /// </summary>
         public ElementHorizontalAlignment ArrowAlignment { get; set; }
 
+        /// <summary>
+        /// The content inside of this popup menu
+        /// </summary>
+        public  MenuViewModel Content { get; set; }
+
         #endregion
 
         #region Constructor
 
-        public BasePopupMenuViewModel()
+        public BasePopupViewModel()
         {
             //Set default values
             // TODO: Move colors into Core and make use of it here
-            BubbleBackground = "ff0000";
+            BubbleBackground = "ffffff";
             ArrowAlignment = ElementHorizontalAlignment.Left;
         }
 
